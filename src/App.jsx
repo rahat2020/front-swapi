@@ -1,12 +1,12 @@
 import StarWarCharacters from "./components/StarWarCharacters";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Topbar from "./components/topbar";
+import Nabvar from "./components/Nabvar";
 
 const App = () => {
   return (
     <div>
-      <Topbar />
+      <Nabvar />
       <Header />
       <StarWarCharacters />
       <Footer />
