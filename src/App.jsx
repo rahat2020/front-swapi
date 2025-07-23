@@ -1,7 +1,7 @@
 import StarWarCharacters from "./components/StarWarCharacters";
-import Topbar from "./components/topbar";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Topbar from "./components/topbar";
 
 const App = () => {
   return (
