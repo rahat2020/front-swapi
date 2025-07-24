@@ -1,4 +1,3 @@
-import { X } from "react-feather";
 import BirthdayIcon from "../helpers/Svgicon/BirthdayIcon";
 
 const Info = ({ label, value, icon: Icon }) => (
@@ -36,8 +35,6 @@ const SingleCharacter = ({ data = {}, handleCloseModal }) => {
             {description || "A character from the Star Wars universe."}
           </p>
         </div>
-
-        {/* Info Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm md:text-base text-gray-700">
           <Info label="Birth Year" value={birth_year} icon={BirthdayIcon} />
           <Info label="Gender" value={gender} />
@@ -48,17 +45,14 @@ const SingleCharacter = ({ data = {}, handleCloseModal }) => {
           <Info label="Skin Color" value={skin_color} />
           <Info label="Homeworld" value={homeworld} />
         </div>
-
-        {/* Footer */}
         <div className="mt-8 flex justify-start items-center">
           <button
             role="button"
             tabIndex={0}
             onClick={handleCloseModal}
-            className="w-30 h-7 font-medium flex justify-center items-center gap-2 px-4 py-1 bg-blue-600 text-white rounded-md hover:bg-blue-700 cursor-pointer transition duration-200"
+            className="inline-flex items-center justify-center gap-4 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-blue-600 text-white hover:bg-blue-700 h-10 px-4 py-2 w-full"
           >
-            <X className="w-4 h-4 font-medium" />
-            Close
+            <span className="pl-2">Close</span>
           </button>
         </div>
       </div>

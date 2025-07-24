@@ -1,12 +1,108 @@
-# React + Vite
+## 🧩 Overview
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a **Star Wars Character Viewer** built using **React.js** for the frontend and **Node.js/Express** as a middleware backend. It fetches data from the [SWAPI.tech](https://swapi.tech/) API and supports the following features:
 
-Currently, two official plugins are available:
+- 🔍 Search by character name
+- 📃 Pagination
+- 📋 View character details in a modal
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## Decision Rationale and QA Test Plan in docs file.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧩 Architecture
+
+### 🔧 Frontend
+
+- **Framework**: React.js
+- **State Management**: `useState`, `useEffect`
+- **UI Components**:
+
+  - Navbar
+  - Header
+  - Search Input
+  - Character List (Card UI)
+  - Modal for character details
+  - Footer
+
+- **API Consumption**: Uses **Axios** to communicate with the backend middleware
+
+---
+
+### 🛠 Backend (Node.js / Express)
+
+The backend serves as a middleware between the frontend and the [SWAPI.tech](https://swapi.tech/) API to:
+
+- Simplify frontend API consumption
+- Provide stable endpoints and handle edge cases
+
+#### Available Endpoints:
+
+- `GET /api/characters?search=&page=` – Fetch characters with optional search & pagination
+- `GET /api/characters/:id` – Fetch character details by ID
+
+---
+
+## 🧩 Installation Guide
+
+### 🔗 Live Demo
+
+- **Frontend**: [https://front-swapi.vercel.app](https://front-swapi.vercel.app)
+- **Backend**: [https://swapi-server-lyart.vercel.app](https://swapi-server-lyart.vercel.app)
+
+---
+
+### 💻 Local Development Setup
+
+#### ✅ Requirements
+
+- Node.js v18+
+- npm
+- Git
+
+---
+
+### 🚀 Steps to Run the Project Locally
+
+#### 1. Clone the Repositories
+
+```bash
+# Clone Frontend
+git clone https://github.com/rahat2020/front-swapi
+
+# Clone Backend
+git clone https://github.com/rahat2020/swapi-server
+```
+
+---
+
+#### 2. Backend Setup
+
+```bash
+cd swapi-server
+npm install
+npm run dev
+```
+
+---
+
+#### 3. Frontend Setup
+
+```bash
+cd front-swapi
+npm install
+```
+
+Update the `.env` file with the backend base URL:
+
+```env
+VITE_API_BASE_URL=http://localhost:5000/api
+```
+
+Then run the project:
+
+```bash
+npm run dev
+```
+
+---
